@@ -6,8 +6,10 @@ Debug X264 under Visual Studio 2022 (default compiled X264 can't be source-debug
 
 ## Steps for usage
 
-1. Configure project: ./configure --enable-static
+1. Configure project: ./configure --enable-static --disable-asm
 
-2. Create project files using CMake (be sure to specify output/build dir, be default it's build and is ignored in gitignore!)
+NOTE: --disable-asm must be specified as VS2022 can't compile assembly-specific entries properly
+
+2. Create project files using CMake (be sure to specify output/build dir, by default it's build and is ignored in gitignore!)
 
 3. Compile project as you please
