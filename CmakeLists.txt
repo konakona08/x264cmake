@@ -13,6 +13,7 @@ option(ENABLE_ASSEMBLY "Enable use of assembly coded primitives" OFF)
 add_definitions(-DHIGH_BIT_DEPTH=0)
 add_definitions(-DBIT_DEPTH=8)
 add_definitions(-DHAVE_STRING_H)
+add_definitions(-DX264_API_EXPORTS)
 # add_definitions(-DNDEBUG)
 
 aux_source_directory(./common/ DIR_COMMON_SRCS)
@@ -20,8 +21,8 @@ aux_source_directory(./encoder/ DIR_ENCODER_SRCS)
 aux_source_directory(./extras/ DIR_EXTRA_SRCS)
 
 
-set(SRCS 
-autocomplete.c    
+set(SRCS  
+x264_dllfuncs.c
 input/input.c    
 input/timecode.c    
 input/raw.c    
@@ -86,4 +87,4 @@ include_directories(./common/)
 include_directories(./encoder)
 include_directories(./extras/)
 
-add_library("libx264"  ${SRCS})
+add_library("libx264" SHARED ${SRCS})
