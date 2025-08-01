@@ -50,7 +50,7 @@ common/base.c
 common/cpu.c    
 common/tables.c    
 encoder/api.c    
-common/win32thread.c    
+# common/win32thread.c     #######thread problems.....
 common/mc.c    
 common/predict.c    
 common/pixel.c    
