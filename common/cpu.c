@@ -30,7 +30,7 @@
 #if HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
 #include <sys/auxv.h>
 #endif
-#if HAVE_SYSCONF
+#if HAVE_SYSCONF && !defined(_MSC_VER)
 #include <unistd.h>
 #endif
 #if SYS_LINUX
